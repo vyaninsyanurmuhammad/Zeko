@@ -10,9 +10,14 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import HeroImage from "@/assets/images/hero-image.png";
 import { useMotionValue, useTransform, animate, motion } from "framer-motion";
 import Link from "next/link";
+import { Button } from "@nextui-org/react";
+import dynamic from "next/dynamic";
+
+const HomeHeroButton = dynamic(() => import("./home-hero-button"), {
+  ssr: false,
+});
 
 const HomeHero = () => {
   const title = "Excellence in everything we do";
@@ -54,19 +59,16 @@ const HomeHero = () => {
           <div className="flex flex-col w-full h-full">
             <div className="w-full h-full flex flex-col gap-8 p-12 lg:p-24 bg-slate-blue-900">
               <div className="w-full h-full flex flex-col justify-end gap-6 mt-24">
-                <motion.h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold">
+                <motion.h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold">
                   {displayText}
                 </motion.h1>
                 <motion.p className="text-xl">
                   {displayTextDescription}
                 </motion.p>
               </div>
-              <div className="flex gap-2 text-slate-blue-900 px-6 py-3 bg-white w-fit h-fit rounded-full items-center">
-                <Link href={"/teams"}>
-                  <span className="text-xl">Let's see our team</span>
-                </Link>
-                <ArrowRight size={32} />
-              </div>
+              <Link href={"/teams"}>
+                <HomeHeroButton />
+              </Link>
             </div>
             <div className="w-full h-fit flex justify-center sm:justify-between flex-wrap gap-3 items-center bg-slate-800 px-12 lg:px-24 py-12">
               <AmazonLogo size={52} />
@@ -77,12 +79,16 @@ const HomeHero = () => {
             </div>
           </div>
 
-          <div className="w-2/3 hidden lg:block lg:relative bg-blue-500">
+          <div className="w-4/5 hidden lg:block relative bg-slate-blue-900">
             <Image
-              className="relative object-cover"
-              src={HeroImage.src}
+              className="relative object-cover object-left"
+              src={
+                "https://images.ctfassets.net/uflk394shvqp/3i3aQqr7h9T1fS0dXQxfi7/d8665f08c4ea9935b1c80dcc74e3c517/gd-group-discussion-tips.jpg"
+              }
               fill
+              sizes="100%"
               alt="hero-img"
+              priority
             />
           </div>
         </div>

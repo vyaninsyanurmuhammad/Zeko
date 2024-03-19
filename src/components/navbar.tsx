@@ -122,6 +122,7 @@ const Navbar = () => {
                 ? "bg-white text-slate-blue-900"
                 : "bg-slate-blue-900 text-white"
             } flex lg:hidden transition-all ease-in-out duration-700`}
+            title="open-nav"
           >
             <Equals size={24} onClick={() => onCLoseClick()} />
           </Button>

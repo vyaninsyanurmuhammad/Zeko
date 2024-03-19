@@ -1,7 +1,50 @@
-import React from "react";
-import HomeTestimoniCard from "./home-testimoni-card";
+"use client";
+
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { getTestimoniesThunk } from "@/redux/features/home/home-thunk";
+import dynamic from "next/dynamic";
+import { Skeleton } from "@nextui-org/react";
+
+const HomeTestimoniCard = dynamic(() => import("./home-testimoni-card"), {
+  ssr: false,
+});
 
 const HomeTestimoni = () => {
+  const testimonies = useAppSelector((state) => state.homeReducer.testimonies);
+  const isLoading = useAppSelector((state) => state.homeReducer.isLoading);
+
+  const dispatch = useAppDispatch();
+
+  const skeletonTestimoni = () => {
+    const element = [];
+
+    for (let index = 0; index < 3; index++) {
+      element.push(
+        <div
+          key={index}
+          className="flex flex-col gap-4 break-inside-avoid group"
+        >
+          <Skeleton className="h-32 w-full rounded-3xl group-hover:shadow-xl group-hover:scale-110 transition-all ease-in-out bg-default-200 shadow-md" />
+
+          <div className="flex gap-4 items-center">
+            <Skeleton className="h-16 w-16 flex shrink-0 rounded-full relative shadow-md" />
+            <div className="w-full h-fit flex flex-col gap-2 justify-center">
+              <Skeleton className="h-6 w-full rounded-full bg-default-200 shadow-md" />
+              <Skeleton className="h-5 w-3/4 rounded-full bg-slate-800 shadow-md"></Skeleton>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return element;
+  };
+
+  useEffect(() => {
+    dispatch(getTestimoniesThunk());
+  }, []);
+
   return (
     <>
       <div className="flex flex-col w-full px-12 lg:px-24 py-24 lg:py-48 gap-24 bg-slate-100">
@@ -14,42 +57,17 @@ const HomeTestimoni = () => {
           </h2>
         </div>
         <div className="h-fit column-1 lg:columns-3 gap-12 space-y-20">
-          <HomeTestimoniCard
-            comment={
-              "I recently used Superb! to create my landing page and it was a breeze."
-            }
-            name={"Asal Design"}
-            from={"CEO, Kretya Studio"}
-          />
-          <HomeTestimoniCard
-            comment={
-              "The drag-and-drop interface made it easy to customize and the end result was exactly what I was looking for."
-            }
-            name={"Burno Wilish"}
-            from={"Ul Designer, Kretya Studio"}
-          />
-          <HomeTestimoniCard
-            comment={
-              "Thanks for the great service. We've used zeko for the last five years. Great job."
-            }
-            name={"Bjorgan"}
-            from={"Co-Founder, Kretya Studio"}
-          />
-          <HomeTestimoniCard
-            comment={"Zeko is worth much more than I paid. We're loving it."}
-            name={"Celline Lavn"}
-            from={"UI Designer, Kretya Studio"}
-          />
-          <HomeTestimoniCard
-            comment={"I've tried so many different products in the past to solve my [insert problem], but none of them have worked as well as the XYZ Product."}
-            name={"Justine Drago"}
-            from={"UI/UX Designer, Kretya Studio"}
-          />
-          <HomeTestimoniCard
-            comment={"I've been using the Zeko for a few months now and I'm blown away by the results."}
-            name={"Merine Excore"}
-            from={"UX Writter, Kretya Studio"}
-          />
+          {isLoading
+            ? skeletonTestimoni()
+            : testimonies.map((testimoni, index) => (
+                <HomeTestimoniCard
+                  key={index}
+                  comment={testimoni.message}
+                  name={testimoni.name}
+                  from={testimoni.position}
+                  image={testimoni.image}
+                />
+              ))}
         </div>
       </div>
     </>

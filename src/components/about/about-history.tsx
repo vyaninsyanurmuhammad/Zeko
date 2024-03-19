@@ -1,5 +1,4 @@
 import React from "react";
-import HeroImage from "@/assets/images/hero-image.png"
 import Image from "next/image";
 
 const AboutHistory = () => {
@@ -22,8 +21,8 @@ const AboutHistory = () => {
             excellence.
           </p>
         </div>
-        <div className="h-[560px] w-full rounded-2xl bg-slate-blue-900 overflow-hidden">
-          <Image className="h-full w-full !relative object-cover" src={HeroImage} fill alt="history-img-1"/>
+        <div className="h-[560px] w-full rounded-2xl bg-slate-blue-900 overflow-hidden relative">
+          <Image className="h-full w-full !relative object-cover" sizes="100%" src={"https://images.ctfassets.net/uflk394shvqp/3i3aQqr7h9T1fS0dXQxfi7/d8665f08c4ea9935b1c80dcc74e3c517/gd-group-discussion-tips.jpg"} fill alt="history-img-1"/>
         </div> 
       </div>
     </>

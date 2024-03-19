@@ -80,6 +80,7 @@ const NavbarMenuMobile = () => {
             isIconOnly
             className="bg-white text-slate-blue-900"
             onClick={() => onCLoseClick()}
+            title="close-nav"
           >
             <X size={24} />
           </Button>
@@ -93,9 +94,10 @@ const NavbarMenuMobile = () => {
                 onClick={() => onCLoseClick()}
               >
                 <Button
+                title={data.name}
                   className={`w-full ${
                     router === data.route
-                      ? "bg-slate-blue-800"
+                      ? "bg-slate-blue-900"
                       : "bg-transparent"
                   } justify-start`}
                 >

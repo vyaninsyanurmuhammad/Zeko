@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: false,
     images: {
         remotePatterns: [
             {
@@ -7,6 +8,12 @@ const nextConfig = {
                 hostname: 'randomuser.me',
                 port: '',
                 pathname: '/api/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.ctfassets.net',
+                port: '',
+                pathname: '/**',
             },
         ],
     },

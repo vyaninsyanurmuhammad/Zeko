@@ -65,6 +65,7 @@ const AboutTeams = () => {
                     className="object-cover grayscale !relative"
                     src={team.image}
                     alt={team.name}
+                    sizes="100%"
                     fill
                   />
                   <div className="flex flex-col w-full bg-white p-8">

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import ImageSrc from "@/assets/images/overview-1.png";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -32,7 +31,7 @@ const About = () => {
         <HeroStandard
           title="Welcome to Zeko! We're more than just a company;"
           subTitle="we're a community driven by passion, innovation, and a commitment to excellence. Learn more about who we are, our journey, our team, and our culture."
-          imageSrc={ImageSrc.src}
+          imageSrc={"https://images.ctfassets.net/uflk394shvqp/uoBF4A1zgTdZYKScFgatg/d61e617cb042f30cad9a03c5dab08c89/161-jenis-jenis-meeting.webp"}
         />
         <AboutHistory />
         <AboutCulture />

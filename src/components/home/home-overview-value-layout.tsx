@@ -9,7 +9,7 @@ const HomeOverviewValueLayout = ({
 }: {
   title: string;
   description: string;
-  image: StaticImageData;
+  image: string;
   imagePostiton?: "left" | "right";
 }) => {
   return (
@@ -97,11 +97,18 @@ const HomeOverviewValueImage = ({
   image,
 }: {
   title: string;
-  image: StaticImageData;
+  image: string;
 }) => {
   return (
     <div className="hidden lg:block w-full lg:w-1/2 relative bg-slate-blue-900">
-      <Image className="object-cover" src={image.src} alt={title} fill />
+      <Image
+        className="object-cover"
+        src={image}
+        sizes="100%"
+        alt={title}
+        fill
+        priority
+      />
     </div>
   );
 };

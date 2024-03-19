@@ -36,12 +36,14 @@ const HeroStandard = ({
           </motion.h1>
           <p className="text-2xl text-white">{subTitle}</p>
         </div>
-        <div className="hidden lg:block relative w-full bg-blue-500">
+        <div className="hidden lg:block relative w-full bg-slate-blue-900">
           <Image
             className="object-cover"
             src={imageSrc}
             fill
+            sizes="100%"
             alt="standard-hero-img"
+            priority
           />
         </div>
       </div>

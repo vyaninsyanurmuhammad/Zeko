@@ -69,7 +69,8 @@ const TeamsCards = () => {
                   <Image
                     src={data.image}
                     alt={data.name}
-                    className="!relative object-cover"
+                    className="!relative h-full w-full object-cover"
+                    sizes="100%"
                     fill
                   />
                 </div>

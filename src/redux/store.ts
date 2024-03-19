@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import appReducer from "./features/app-slice";
 import teamsReducer from "./features/teams/teams-slice";
 import aboutReducer from "./features/about/about-slice";
+import homeReducer from "./features/home/home-slice";
 
 export const store = configureStore({
   reducer: {
     appReducer,
     teamsReducer,
     aboutReducer,
+    homeReducer,
   },
 });
 
