@@ -14,7 +14,7 @@ const AboutHistory = () => {
             revolutionize the way people connect and interact with technology.
             Founded in 2015 by tech enthusiasts Alex and Maya, Zeko started as a
             humble startup in a garage, fueled by passion and driven by
-            innovation. Since then, we've grown exponentially, reaching
+            innovation. Since then, we&apos;ve grown exponentially, reaching
             milestones that once seemed distant dreams. From launching our first
             product to expanding into new markets, every step of our journey has
             been marked by perseverance, creativity, and a relentless pursuit of

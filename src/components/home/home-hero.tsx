@@ -50,7 +50,7 @@ const HomeHero = () => {
 
     controls.stop;
     controlsDescription.stop;
-  }, []);
+  }, [count, title, countDescription, description]);
 
   return (
     <>

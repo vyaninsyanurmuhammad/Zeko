@@ -34,7 +34,7 @@ const AboutTeams = () => {
 
   useEffect(() => {
     dispatch(getTeamsThunk());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -54,8 +54,8 @@ const AboutTeams = () => {
           </p>
         </div>
         <div className="w-full h-fit lg:h-auto flex flex-col md:flex-row gap-8">
-          {
-            teamsLoading ? teamsSkeleton()
+          {teamsLoading
+            ? teamsSkeleton()
             : teams.map((team, index) => (
                 <div
                   key={index}
@@ -77,8 +77,7 @@ const AboutTeams = () => {
                     </span>
                   </div>
                 </div>
-              ))
-          }
+              ))}
         </div>
       </div>
     </>

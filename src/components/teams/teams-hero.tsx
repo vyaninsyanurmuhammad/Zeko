@@ -19,7 +19,7 @@ const TeamsHero = () => {
     });
 
     controls.stop;
-  }, []);
+  }, [count, title]);
 
   return (
     <>

@@ -25,7 +25,7 @@ const HeroStandard = ({
     });
     
     controls.stop;
-  }, []);
+  }, [count, title]);
 
   return (
     <>

@@ -19,7 +19,7 @@ const ServicesHero = () => {
     });
 
     controls.stop;
-  }, []);
+  }, [count, title]);
 
   return (
     <>

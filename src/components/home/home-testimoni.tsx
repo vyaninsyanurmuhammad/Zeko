@@ -43,7 +43,7 @@ const HomeTestimoni = () => {
 
   useEffect(() => {
     dispatch(getTestimoniesThunk());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -53,7 +53,7 @@ const HomeTestimoni = () => {
             Testimonial
           </span>
           <h2 className="text-5xl lg:text-7xl font-bold text-center lg:text-start text-slate-800">
-            Find out how we've made a difference for others
+            Find out how we&apos;ve made a difference for others
           </h2>
         </div>
         <div className="h-fit column-1 lg:columns-3 gap-12 space-y-20">

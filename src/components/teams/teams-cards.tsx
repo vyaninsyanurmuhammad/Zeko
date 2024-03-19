@@ -22,7 +22,7 @@ const TeamsCards = () => {
 
   useEffect(() => {
     dispatch(getTeamsThunk());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

@@ -74,7 +74,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("scroll", controlDirection);
     };
-  }, []);
+  }, [handleScroll, controlDirection]);
 
   return (
     <>

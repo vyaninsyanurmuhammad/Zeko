@@ -7,8 +7,8 @@ const ServicesOverview = () => {
       <div className="flex flex-col lg:grid lg:grid-cols-4 p-12 lg:p-24">
         <div className="col-span-1 flex flex-col gap-8 py-12 lg:py-24 lg:pr-24 justify-center">
           <p className="text-xl text-start text-slate-500">
-            At Zeko, we're dedicated to providing innovative solutions that
-            empower individuals and businesses to thrive in today's digital
+            At Zeko, we&apos;re dedicated to providing innovative solutions that
+            empower individuals and businesses to thrive in today&apos;s digital
             world. Explore our range of products and services designed to
             streamline your workflow, enhance your productivity, and unlock new
             possibilities

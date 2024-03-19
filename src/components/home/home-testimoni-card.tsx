@@ -16,7 +16,7 @@ const HomeTestimoniCard = ({
     <>
       <div className="flex flex-col gap-4 break-inside-avoid group">
         <p className="text-2xl p-10 rounded-3xl bg-white w-fit text-slate-800 font-semibold group-hover:shadow-xl group-hover:scale-110 transition-all ease-in-out">
-          "{comment}"
+        &ldquo;{comment}&ldquo;
         </p>
 
         <div className="flex gap-4 items-center">
