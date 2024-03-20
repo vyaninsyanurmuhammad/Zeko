@@ -1,6 +1,6 @@
 import React from "react";
 
-const ServicesMainLayout = ({
+const ServicesExplainLayout = ({
   title,
   description,
   listDescription,
@@ -33,4 +33,4 @@ const ServicesMainLayout = ({
   );
 };
 
-export default ServicesMainLayout;
+export default ServicesExplainLayout;

@@ -1,7 +1,10 @@
-import TeamsMain from "@/components/teams/teams-main";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+import React from "react";
 
-import React, { useEffect } from "react";
+const TeamsMain = dynamic(() => import("@/components/teams/teams-main"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Zeko! - Teams",

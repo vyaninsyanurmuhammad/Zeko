@@ -1,31 +1,9 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-const HomeHero = dynamic(() => import("@/components/home/home-hero"), {
+const HomeMain = dynamic(() => import("@/components/home/home-main"), {
   ssr: false,
 });
-
-const HomeOverview = dynamic(() => import("@/components/home/home-overview"), {
-  ssr: false,
-});
-
-const HomeServices = dynamic(() => import("@/components/home/home-services"), {
-  ssr: false,
-});
-
-const HomeTestimoni = dynamic(
-  () => import("@/components/home/home-testimoni"),
-  {
-    ssr: false,
-  }
-);
-
-const HomeCompanyTagline = dynamic(
-  () => import("@/components/home/home-company-tagline"),
-  {
-    ssr: false,
-  }
-);
 
 export const metadata: Metadata = {
   title: "Zeko! - Home",
@@ -36,13 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="h-full w-full overflow-y-auto scroll-smooth">
-        <HomeHero />
-        <HomeOverview />
-        <HomeServices />
-        <HomeTestimoni />
-        <HomeCompanyTagline />
-      </div>
+      <HomeMain />
     </>
   );
 }

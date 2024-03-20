@@ -1,24 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-const ServicesHero = dynamic(
-  () => import("@/components/services/services-hero"),
-  { ssr: false }
-);
-
-const ServicesOverview = dynamic(
-  () => import("@/components/services/services-overview"),
-  { ssr: false }
-);
-
 const ServicesMain = dynamic(
   () => import("@/components/services/services-main"),
-  { ssr: false }
-);
-
-const ServicesTagline = dynamic(
-  () => import("@/components/services/services-tagline"),
   { ssr: false }
 );
 
@@ -31,12 +16,7 @@ export const metadata: Metadata = {
 const Services = () => {
   return (
     <>
-      <div className="flex flex-col w-full h-fit">
-        <ServicesHero />
-        <ServicesOverview />
-        <ServicesMain />
-        <ServicesTagline />
-      </div>
+      <ServicesMain />
     </>
   );
 };
