@@ -88,7 +88,6 @@ const HomeHero = () => {
               fill
               sizes="100%"
               alt="hero-img"
-              priority
             />
           </div>
         </div>

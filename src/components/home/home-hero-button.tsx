@@ -10,8 +10,8 @@ const HomeHeroButton = () => {
         title="nav-teams"
       >
         <div className="w-full h-fit overflow-hidden">
-          <span className="hidden sm:block text-xl truncate">Let&apos;s see our team</span>
-          <span className="block sm:hidden text-xl truncate">Our team</span>
+          <span className="w-full h-fit hidden sm:block text-xl truncate">Let&apos;s see our team</span>
+          <span className="w-full h-fit block sm:hidden text-xl truncate">Our team</span>
         </div>
         <ArrowRight size={32} />
       </Button>

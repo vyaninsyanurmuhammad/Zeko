@@ -43,7 +43,6 @@ const HeroStandard = ({
             fill
             sizes="100%"
             alt="standard-hero-img"
-            priority
           />
         </div>
       </div>

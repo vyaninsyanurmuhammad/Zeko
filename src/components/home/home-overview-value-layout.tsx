@@ -107,7 +107,6 @@ const HomeOverviewValueImage = ({
         sizes="100%"
         alt={title}
         fill
-        priority
       />
     </div>
   );
