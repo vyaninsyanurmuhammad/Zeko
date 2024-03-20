@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react";
-import { ArrowRight } from "@phosphor-icons/react";
-import React from "react";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import dynamic from "next/dynamic";
+import HomeHeroButtonTextLayout from "./home-hero-button-text-layout";
 
 const HomeHeroButton = () => {
   return (
@@ -9,10 +10,7 @@ const HomeHeroButton = () => {
         className="flex gap-2 text-slate-blue-900 px-6 py-3 bg-white w-full sm:w-fit h-fit rounded-full items-center overflow-hidden"
         title="nav-teams"
       >
-        <div className="w-full h-fit overflow-hidden">
-          <span className="w-full h-fit hidden sm:block text-xl truncate">Let&apos;s see our team</span>
-          <span className="w-full h-fit block sm:hidden text-xl truncate">Our team</span>
-        </div>
+        <HomeHeroButtonTextLayout />
         <ArrowRight size={32} />
       </Button>
     </>

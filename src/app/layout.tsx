@@ -6,7 +6,7 @@ import NextUILocalProvider from "@/nextui/provider";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Zeko!",
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
         width: 800,
         height: 600,
       },
-     
     ],
   },
 };

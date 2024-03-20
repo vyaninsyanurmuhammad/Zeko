@@ -14,28 +14,20 @@ import { useMotionValue, useTransform, animate, motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import dynamic from "next/dynamic";
+import HomeHeroButton from "./home-hero-button";
 
-const HomeHeroButton = dynamic(() => import("./home-hero-button"), {
+const HomeHeroDescription = dynamic(() => import("./home-hero-description"), {
   ssr: false,
 });
 
 const HomeHero = () => {
   const title = "Excellence in everything we do";
-  const description =
-    "Find out why Zeko is the go-to choice for top-quality services and unbeatable customer service.";
 
   const count = useMotionValue(0);
-  const countDescription = useMotionValue(0);
 
   const rounded = useTransform(count, (latest) => Math.round(latest));
-  const roundedDescription = useTransform(countDescription, (latest) =>
-    Math.round(latest)
-  );
 
   const displayText = useTransform(rounded, (latest) => title.slice(0, latest));
-  const displayTextDescription = useTransform(roundedDescription, (latest) =>
-    description.slice(0, latest)
-  );
 
   const controlMotion = (countAnimate: any, value: string, duration: number) =>
     animate(countAnimate, value.length, {
@@ -46,11 +38,9 @@ const HomeHero = () => {
 
   useEffect(() => {
     const controls = controlMotion(count, title, 5);
-    const controlsDescription = controlMotion(countDescription, description, 4);
 
     controls.stop;
-    controlsDescription.stop;
-  }, [count, title, countDescription, description]);
+  }, [count, title]);
 
   return (
     <>
@@ -62,9 +52,7 @@ const HomeHero = () => {
                 <motion.h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold">
                   {displayText}
                 </motion.h1>
-                <motion.p className="text-xl sm:text-2xl">
-                  {displayTextDescription}
-                </motion.p>
+                <HomeHeroDescription />
               </div>
               <Link href={"/teams"}>
                 <HomeHeroButton />

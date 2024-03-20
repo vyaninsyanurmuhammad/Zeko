@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 
+const NavbarLogo = dynamic(() => import("./navbar-logo"));
 const NavbarMenuMobile = dynamic(() => import("./navbar-menu-mobile"));
 
 const Navbar = () => {
@@ -89,10 +90,7 @@ const Navbar = () => {
         <div className="flex w-full justify-between items-center text-white">
           <div className="flex w-fit gap-9 items-center">
             <Link href={"/"} shallow>
-              <div className="flex gap-2 items-center">
-                <Atom size={32} />
-                <span className="font-bold text-2xl">Zeko!</span>
-              </div>
+              <NavbarLogo/>
             </Link>
             <div className="hidden lg:flex gap-9">
               {NavigationList.map((data, index) => (
