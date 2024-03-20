@@ -33,9 +33,11 @@ const TeamsCardLayout = ({
           <span className="w-full text-white text-xl sm:text-2xl lg:text-4xl font-semibold truncate">
             {name}
           </span>
-          <span className="w-full flex justify-start lg:justify-center items-center text-start lg:text-center text-slate-400 group-hover:text-slate-100 text-sm sm:text-base lg:text-3xl font-medium truncate">
-            {position}
-          </span>
+          <div className="w-full flex justify-start lg:justify-center items-center text-start lg:text-center overflow-hidden">
+            <span className="w-full text-slate-400 group-hover:text-slate-100 text-sm sm:text-base lg:text-3xl font-medium truncate">
+              {position}
+            </span>
+          </div>
         </div>
 
         <span className="hidden sm:flex w-1/2 justify-end items-center text-white text-xl lg:text-4xl font-medium text-end">
