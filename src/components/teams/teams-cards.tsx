@@ -3,8 +3,10 @@
 import { getTeamsThunk } from "@/redux/features/teams/teams-thunk";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { Skeleton } from "@nextui-org/react";
-import Image from "next/image";
 import React, { useEffect } from "react";
+import dynamic from "next/dynamic";
+
+const TeamsCardLayout = dynamic(() => import('./teams-card-layout'), { ssr: false })
 
 const TeamsCards = () => {
   const teams = useAppSelector((state) => state.teamsReducer.teams);
@@ -59,35 +61,14 @@ const TeamsCards = () => {
             </>
           ) : (
             teams.map((data, index) => (
-              <div
+              <TeamsCardLayout
                 key={index}
-                className={`w-full flex flex-row px-12 lg:px-24 py-12 justify-between items-center group ${
-                  colors[index % colors.length]
-                } gap-6 lg:gap-10 transition-all duration-200 ease-in-out`}
-              >
-                <div className="bg-slate-blue-900 h-20 w-20 rounded-full flex shrink-0 relative overflow-hidden">
-                  <Image
-                    src={data.image}
-                    alt={data.name}
-                    className="!relative h-full w-full object-cover"
-                    sizes="100%"
-                    fill
-                  />
-                </div>
-
-                <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-2 lg:gap-10">
-                  <span className="w-full text-white text-2xl lg:text-4xl font-semibold">
-                    {data.name}
-                  </span>
-                  <span className="w-full flex justify-start lg:justify-center items-center text-start lg:text-center text-slate-400 group-hover:text-slate-100 text-base lg:text-3xl font-medium">
-                    {data.position}
-                  </span>
-                </div>
-
-                <span className="hidden sm:flex w-1/2 justify-end items-center text-white text-xl lg:text-4xl font-medium text-end">
-                  {data.location}
-                </span>
-              </div>
+                color={colors[index % colors.length]}
+                image={data.image}
+                name={data.name}
+                position={data.position}
+                location={data.location}
+              />
             ))
           )}
         </div>
