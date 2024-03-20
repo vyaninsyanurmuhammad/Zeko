@@ -10,6 +10,10 @@ const TeamsCardLayout = dynamic(() => import("./teams-card-layout"), {
   ssr: false,
 });
 
+const TeamsTagline = dynamic(() => import("./teams-tagline"), {
+  ssr: false,
+});
+
 const TeamsCards = () => {
   const teams = useAppSelector((state) => state.teamsReducer.teams);
   const teamsLoading = useAppSelector((state) => state.teamsReducer.isLoading);
@@ -43,17 +47,13 @@ const TeamsCards = () => {
               <div
                 className={`w-full flex flex-row px-12 lg:px-24 py-12 justify-between items-center group gap-6 lg:gap-10`}
               >
-                <div className="h-20 w-20 rounded-full flex shrink-0 relative overflow-hidden">
+                <div className="w-14 h-14 lg:h-20 lg:w-20 rounded-full flex shrink-0 relative overflow-hidden">
                   <Skeleton className="w-full h-full opacity-20" />
                 </div>
 
                 <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-2 lg:gap-10">
-                  <span className="w-full text-white text-2xl lg:text-4xl font-semibold">
-                    <Skeleton className="rounded-full w-full h-6 lg:h-9 opacity-20" />
-                  </span>
-                  <span className="w-full flex justify-start lg:justify-center items-center text-start lg:text-center text-slate-400 group-hover:text-slate-100 text-base lg:text-3xl font-medium">
-                    <Skeleton className="rounded-full w-full h-4 lg:h-8 opacity-20" />
-                  </span>
+                  <Skeleton className="rounded-full w-full h-5 sm:h-6 lg:h-9 opacity-20" />
+                  <Skeleton className="rounded-full w-full h-3 sm:h-4 lg:h-8 opacity-20" />
                 </div>
 
                 <span className="hidden sm:flex w-1/2 justify-end items-center text-white text-xl lg:text-4xl font-medium text-end">
@@ -75,10 +75,7 @@ const TeamsCards = () => {
           )}
         </div>
 
-        <span className="text-4xl lg:text-5xl font-medium text-white text-start w-3/4 pt-24 pb-12 px-12 lg:px-24">
-          If you like to work in remote teams that value great work over loud
-          voices, we’d love to hear from you!
-        </span>
+        <TeamsTagline />
       </div>
     </>
   );
