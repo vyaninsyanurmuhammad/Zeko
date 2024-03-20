@@ -10,7 +10,7 @@ const HomeOverview = () => {
           <span className="text-2xl text-center font-medium text-slate-blue-900">
             Company Overview
           </span>
-          <h2 className="text-5xl lg:text-7xl font-bold text-center text-slate-800">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-center text-slate-800">
             Learn about the guiding principles that drive Zeko to succeed.
           </h2>
         </div>

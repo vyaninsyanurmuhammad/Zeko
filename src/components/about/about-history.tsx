@@ -9,7 +9,7 @@ const AboutHistory = () => {
           <span className="text-2xl text-start font-medium text-slate-blue-900">
             Company History
           </span>
-          <p className="text-xl text-start text-slate-800">
+          <p className="text-xl sm:text-2xl text-start text-slate-800">
             At Zeko, our journey began with a simple yet ambitious vision: to
             revolutionize the way people connect and interact with technology.
             Founded in 2015 by tech enthusiasts Alex and Maya, Zeko started as a

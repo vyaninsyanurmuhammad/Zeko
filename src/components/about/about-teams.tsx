@@ -43,10 +43,10 @@ const AboutTeams = () => {
           <span className="text-2xl text-start font-medium text-slate-blue-900">
             Company teams
           </span>
-          <h2 className="text-5xl lg:text-7xl font-bold text-start text-slate-800 flex flex-col after:content-[''] after:bg-slate-blue-900 after:group-hover:w-full after:w-0 after:h-2 after:transition-all after:ease-in-out after:duration-1000">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-start text-slate-800 flex flex-col after:content-[''] after:bg-slate-blue-900 after:group-hover:w-full after:w-0 after:h-2 after:transition-all after:ease-in-out after:duration-1000">
             Meet our highly- qualified team
           </h2>
-          <p className="text-xl text-start text-slate-500">
+          <p className="text-xl sm:text-2xl text-start text-slate-500">
             Zeko! into the technical expertise driving the precision in our
             architectural executions. Meet our team of technical wizards who
             ensure that every blueprint transforms seamlessly into a tangible

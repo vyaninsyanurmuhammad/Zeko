@@ -34,7 +34,7 @@ const HeroStandard = ({
           <motion.h1 className="pt-24 text-5xl font-bold text-white">
             {displayText}
           </motion.h1>
-          <p className="text-2xl text-white">{subTitle}</p>
+          <p className="text-xl sm:text-2xl text-white">{subTitle}</p>
         </div>
         <div className="hidden lg:block relative w-full bg-slate-blue-900">
           <Image

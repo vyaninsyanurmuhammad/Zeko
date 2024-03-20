@@ -81,12 +81,12 @@ const HomeOverviewValueContent = ({
           <span className="text-2xl text-center font-medium text-slate-blue-900">
             Our Value
           </span>
-          <h2 className="flex flex-col text-4xl lg:text-5xl xl:text-7xl font-semibold text-start text-slate-800 after:content-[''] after:bg-slate-blue-900 after:group-hover:w-full after:w-0 after:h-2 after:transition-all after:ease-in-out after:duration-1000">
+          <h2 className="flex flex-col text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-semibold text-start text-slate-800 after:content-[''] after:bg-slate-blue-900 after:group-hover:w-full after:w-0 after:h-2 after:transition-all after:ease-in-out after:duration-1000">
             {title}
           </h2>
         </div>
 
-        <p className="text-2xl text-gray-500">{description}</p>
+        <p className="text-xl sm:text-2xl text-gray-500">{description}</p>
       </div>
     </>
   );

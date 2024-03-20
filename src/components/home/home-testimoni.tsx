@@ -52,7 +52,7 @@ const HomeTestimoni = () => {
           <span className="text-2xl text-center lg:text-start font-medium text-slate-blue-900">
             Testimonial
           </span>
-          <h2 className="text-5xl lg:text-7xl font-bold text-center lg:text-start text-slate-800">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-center lg:text-start text-slate-800">
             Find out how we&apos;ve made a difference for others
           </h2>
         </div>

@@ -54,15 +54,15 @@ const HomeHero = () => {
 
   return (
     <>
-      <div className="relative w-full h-[960px] lg:h-[1120px] xl:h-[990px] 2xl:h-[870px] flex text-white pb-12 lg:pb-24">
+      <div className="relative w-full h-[840px] sm:h-[960px] lg:h-[1120px] xl:h-[990px] 2xl:h-[870px] flex text-white pb-12 lg:pb-24">
         <div className="flex flex-row w-full h-full">
           <div className="flex flex-col w-full h-full">
             <div className="w-full h-full flex flex-col gap-8 p-12 lg:p-24 bg-slate-blue-900">
               <div className="w-full h-full flex flex-col justify-end gap-6 mt-24">
-                <motion.h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold">
+                <motion.h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold">
                   {displayText}
                 </motion.h1>
-                <motion.p className="text-xl">
+                <motion.p className="text-xl sm:text-2xl">
                   {displayTextDescription}
                 </motion.p>
               </div>

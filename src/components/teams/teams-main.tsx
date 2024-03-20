@@ -1,11 +1,10 @@
-import dynamic from 'next/dynamic'
-import React, { useEffect } from "react";
+import dynamic from "next/dynamic";
+import React from "react";
 
-const TeamsHero = dynamic(() => import('./teams-hero'), { ssr: false })
-const TeamsCards = dynamic(() => import('./teams-cards'), { ssr: false })
+const TeamsHero = dynamic(() => import("./teams-hero"), { ssr: false });
+const TeamsCards = dynamic(() => import("./teams-cards"), { ssr: false });
 
 const TeamsMain = () => {
-
   return (
     <>
       <div className="h-full w-full flex flex-col">
