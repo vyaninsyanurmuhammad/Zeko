@@ -38,7 +38,21 @@ const NavbarMenuMobile = () => {
 
   return (
     <>
-      <div className=" fixed z-20 w-full h-full flex lg:hidden">
+      <motion.div
+        className="fixed z-20 w-full h-full flex lg:hidden"
+        animate={{
+          animation: "ease-in",
+        }}
+        exit={{
+          animation: "ease-out",
+        }}
+        transition={{
+          x: {
+            type: "spring",
+            bounce: 0,
+          },
+        }}
+      >
         <motion.div
           className="w-full h-full bg-slate-800/60"
           initial={{
@@ -46,15 +60,19 @@ const NavbarMenuMobile = () => {
           }}
           animate={{
             opacity: 1,
-            animation: "ease-in"
+            animation: "ease-in",
           }}
           exit={{
             opacity: 0,
-            animation: "ease-out"
-
+            animation: "ease-out",
+          }}
+          transition={{
+            x: {
+              type: "spring",
+              bounce: 0,
+            },
           }}
           onClick={() => onCLoseClick()}
-
         ></motion.div>
         <motion.div
           className="absolute right-0 w-4/5 h-full bg-slate-800 py-6 px-4 shadow-2xl flex flex-col gap-4 items-end"
@@ -63,11 +81,11 @@ const NavbarMenuMobile = () => {
           }}
           animate={{
             x: 0,
-            animation: "linear",
+            animation: "ease-in",
           }}
           exit={{
             x: "100%",
-            animation: "linear",
+            animation: "ease-out",
           }}
           transition={{
             x: {
@@ -94,7 +112,7 @@ const NavbarMenuMobile = () => {
                 onClick={() => onCLoseClick()}
               >
                 <Button
-                title={data.name}
+                  title={data.name}
                   className={`w-full ${
                     router === data.route
                       ? "bg-slate-blue-900"
@@ -115,7 +133,7 @@ const NavbarMenuMobile = () => {
             ))}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -6,7 +6,9 @@ import { Skeleton } from "@nextui-org/react";
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 
-const TeamsCardLayout = dynamic(() => import('./teams-card-layout'), { ssr: false })
+const TeamsCardLayout = dynamic(() => import("./teams-card-layout"), {
+  ssr: false,
+});
 
 const TeamsCards = () => {
   const teams = useAppSelector((state) => state.teamsReducer.teams);
